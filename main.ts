@@ -1,8 +1,12 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 function main() {
-    const src = path.resolve('entry.png');
+    const src = path.join(__dirname, 'entry.png');
     const destDir = '/output';
     const dest = path.join(destDir, 'entry.png');
 
